@@ -1,7 +1,20 @@
-function Main() {
+import "./Main.css"
+import Movie from "./Movie"
+
+
+function Main(props) {
+
     return (
-        <h2>This is the main section</h2>
-    )
+        <div className="Main">
+
+            {props.movies.map((movieObj) => {
+                return (
+                    <Movie movie={movieObj} delete={props.delete} />
+                )
+            })}
+
+        </div>
+    );
 }
 
-export default Main; 
+export default Main;
